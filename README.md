@@ -108,7 +108,10 @@ Update config.php with database credentials
 Visit:
 
 http://localhost/your-folder-name
+
+
 📂 Folder Structure
+
 admin/
 voter/
 includes/

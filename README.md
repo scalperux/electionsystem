@@ -158,4 +158,8 @@ Edwin
 
 Live Test
 
-electionsystem.ct.ws
+http://electionsystem.ct.ws
+
+test logs
+san
+1234

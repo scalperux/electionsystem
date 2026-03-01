@@ -1,0 +1,250 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Background center */
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #4f46e5, #020617);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e5e7eb;
+}
+
+/* Main card container */
+.app-container {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(15, 23, 42, 0.96);
+    border-radius: 22px;
+    padding: 24px 26px 28px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+/* Header area */
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.app-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.app-subtitle {
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+/* Role badge / status */
+.badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    background: rgba(22, 163, 74, 0.18);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, opacity 0.12s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+    color: #f9fafb;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.55);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 40px rgba(79, 70, 229, 0.7);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    color: #e5e7eb;
+}
+
+.btn-outline:hover {
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Form */
+.form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+    color: #9ca3af;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 40px 10px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    background: rgba(15, 23, 42, 0.94);
+    color: #f9fafb;
+    outline: none;
+    font-size: 0.9rem;
+    transition: border-color 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+.input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.7);
+    background: rgba(15, 23, 42, 0.98);
+}
+
+/* Small toggle icon for password */
+.input-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.78rem;
+    color: #9ca3af;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Alerts */
+.alert {
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    margin-bottom: 10px;
+}
+
+.alert-success {
+    border-color: rgba(34, 197, 94, 0.7);
+    color: #4ade80;
+}
+
+.alert-error {
+    border-color: rgba(239, 68, 68, 0.8);
+    color: #fecaca;
+}
+
+/* Grid for candidates / cards (later) */
+.candidate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.candidate-card {
+    background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.24), rgba(15, 23, 42, 0.96));
+    border-radius: 16px;
+    padding: 16px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease, background 0.14s ease;
+}
+
+.candidate-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+    border-color: rgba(129, 140, 248, 0.9);
+}
+
+.candidate-card.selected {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.4);
+    background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.25), rgba(15, 23, 42, 0.98));
+}
+
+.candidate-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 1rem;
+}
+
+.candidate-meta {
+    font-size: 0.78rem;
+    color: #9ca3af;
+    margin-bottom: 8px;
+}
+
+.candidate-manifesto {
+    font-size: 0.85rem;
+    color: #d1d5db;
+}
+
+/* Footer row */
+.app-footer {
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+/* Simple flex row helper */
+.row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .app-container {
+        margin: 14px;
+        padding: 20px 18px 22px;
+    }
+    .app-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .app-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
